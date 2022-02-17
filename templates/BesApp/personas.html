@@ -1,0 +1,13 @@
+{% extends "BesApp/inicio.html" %}
+{% load static %}
+{% block contenidoQuecambia %}
+    <h1>Las personas son...</h1>
+    {% for Persona in personas %}
+        {{ Persona }}
+        <a href="{% url 'persdelete' Persona.id  %}">Remover</a>
+        <a href="{% url 'Pupdate' Persona.id  %}">Editar</a>
+        <br>
+    {% endfor %}
+
+    <a class="btn btn-primary" href="{% url 'Perform' %}">Agregar</a>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "BesApp/inicio.html" %}
+{% load static %}
+{% block contenidoQuecambia %}
+    <h1>Los productos son...</h1>
+    {% for Producto in productos %}
+        {{ Producto }}
+        <a href="{% url 'prodelete' Producto.id  %}">Remover</a>
+        <br>
+    {% endfor %}
+    <a class="btn btn-primary" href="{% url 'Proform' %}">Agregar</a>
+{% endblock %}

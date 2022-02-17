@@ -1,0 +1,11 @@
+<p>Estamos buscando el: {{nombre}}</p>
+{% if nombre %}
+<ul>
+{% for persona in personas %}
+    <li>{{persona.nombre}}</li>
+    <li>{{persona.apellido}}</li>
+{% endfor %}
+
+</ul>
+
+{% endif %}
