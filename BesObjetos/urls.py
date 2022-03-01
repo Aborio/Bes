@@ -29,7 +29,6 @@ urlpatterns = [
     path("login/", login_request, name="login"),
     path("register/", register, name = "register"),
     path("logout", LogoutView.as_view(template_name='BesApp/logout.html'), name="logout"),
-    path("user/edit", editar_perfil, name = "user_edit")
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

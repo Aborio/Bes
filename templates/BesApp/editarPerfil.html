@@ -4,22 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario Personas</title>
+    <title>Document</title>
 </head>
 <body>
-    
-
-    {% if formulario.errors %}
-        <p style="color: red;">{{ formulario.errors }}</p>
-    {% endif %}
+    <h1>Formulario - editar Pefil</h1>
+    <h2>de {{usuario}}</h2>
     <form action="" method="POST">
         {% csrf_token %}
+
         <table>
-            {{ formulario.as_table  }}
+
+            {{ form.as_table }}
+
+
         </table>
 
-        <input type="submit" value="Enviar">
+        <input type="submit", value="Enviar">
+
+
+
+
 
     </form>
+
 </body>
 </html>

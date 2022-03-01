@@ -45,25 +45,23 @@ def editar_perfil(request):
     usuario = request.user
 
     if request.method == "POST":
-        formulario = UserEditForm(request.POST)
-        if formulario.is_valid():
-            data = formulario.cleaned_data
+        form = UserEditForm(request.POST)
+        if form.is_valid():
+            data = form.cleaned_data
             usuario.email = data ['email']
-            usuario.password1 = data ['password1']
-            usuario.password2 = data ['password2']
+            usuario.set_password(data ['password1'])
             usuario.save()
-            return redirect("inicio")
+            return render(request, "BesApp/inicio.html")
     else:
-        formulario = UserEditForm({'email' : usuario.email})
-    return render (request, 'BesApp/register.html' , {'form' : formulario})
+        form = UserEditForm(initial={'email' : usuario.email})
+    return render (request, 'BesApp/editarPerfil.html' , {'form' : form, "usuario":usuario})
 
 @login_required
 def agregarAvatar(request):
     if request.method == "POST":
-        miFormulario = AvatarFormulario(request.POST, request.files)
-        if miFormulario.is_valid:
-            u = User.objects.get(username=request.user)
-            avatar = Avatar (user=u, imagen= miFormulario.cleaned_data['imagen'])
+        miFormulario = AvatarFormulario(request.POST, request.FILES)
+        if miFormulario.is_valid():
+            avatar = Avatar(user=request.user, imagen=miFormulario.cleaned_data['imagen'])
             avatar.save()
             return render (request, 'BesApp/inicio.html')
     else:
@@ -73,4 +71,7 @@ def agregarAvatar(request):
 
 def error404(request, exception):
     return render (request, "BesApp/404error.html")
+
+def perfil(request):
+    return render (request, "BesApp/perfil.html")
 

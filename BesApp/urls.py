@@ -1,4 +1,6 @@
 from django.urls import path
+from BesObjetos.view import perfil
+from BesObjetos.view import editar_perfil
 from BesObjetos.view import agregarAvatar
 from BesApp.views import About, persona_update
 from BesApp.views import persona_delete, compra_delete, producto_delete
@@ -26,7 +28,10 @@ urlpatterns = [
     path("compra/delete/<id_compra>", compra_delete, name="comdelete"),
     path("persona/update/<id_persona>", persona_update, name = "Pupdate"),
     path("about", About, name = "abouT"),
-    path("agregarAvatar", agregarAvatar, name = "agregarAvatar")
+    path("agregarAvatar", agregarAvatar, name = "agregarAvatar"),
+    path("editarPerfil", editar_perfil , name = "editarPerfil"),
+    path("perfil", perfil, name = "perfil")
+
 
 
 

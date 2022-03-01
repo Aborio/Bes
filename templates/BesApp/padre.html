@@ -16,13 +16,16 @@
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="{%static 'BesApp/css/styles.css' %}" rel="stylesheet" />
+        <link href="{% static 'BesApp/css/styles.css' %}" rel="stylesheet" />
     </head>
     <body>
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
                 <a class="navbar-brand" href="inicio">Inicio</a>
+                <a class="navbar-brand" href="{% url 'compras' %}">Compras</a>
+                <a class="navbar-brand" href="{% url 'personas' %}">Personas</a>
+                <a class="navbar-brand" href="{% url 'productos' %}">Productos</a>
                 <a class="btn btn-primary" href="{% url 'login' %}">Login</a>
             </div>
         </nav>

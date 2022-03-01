@@ -25,7 +25,7 @@ def inicio(request):
     return render(request,'BesApp/inicio.html', {'avatar_url' : avatar_url})
 
 def Personas(request):
-        avatares = Avatar.objects.filter(user=request.user)
+        avatares = Avatar.objects.filter()
         if avatares:
             avatar_url = avatares.last().imagen.url
         else:
@@ -33,7 +33,7 @@ def Personas(request):
         return render (request, 'BesApp/personas.html', {"personas" : Persona.objects.all,'avatar_url' : avatar_url})
 
 def Producto(request):
-        avatares = Avatar.objects.filter(user=request.user)
+        avatares = Avatar.objects.filter()
         if avatares:
             avatar_url = avatares.last().imagen.url
         else:
@@ -41,7 +41,7 @@ def Producto(request):
         return render (request, 'BesApp/productos.html', {"productos" : Productos.objects.all, 'avatar_url' : avatar_url})
 
 def Compra(request):
-        avatares = Avatar.objects.filter(user=request.user)
+        avatares = Avatar.objects.filter()
         if avatares:
             avatar_url = avatares.last().imagen.url
         else:
