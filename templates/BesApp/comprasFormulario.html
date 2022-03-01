@@ -7,7 +7,9 @@
     <title>Formulario Compras</title>
 </head>
 <body>
-
+    {% extends "BesApp/inicio.html" %}
+    {% load static %}
+    {% block contenidoQuecambia %}
     {% if Cformulario.errors %}
         <p style="color: red;">{{ Cformulario.errors }}</p>
     {% endif %}
@@ -20,5 +22,6 @@
         <input type="submit" value="Enviar">
 
     </form>
+    {% endblock %}
 </body>
 </html>

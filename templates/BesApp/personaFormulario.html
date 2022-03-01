@@ -7,19 +7,21 @@
     <title>Formulario Personas</title>
 </head>
 <body>
-    
-
+    {% extends "BesApp/inicio.html" %}
+    {% load static %}
+    {% block contenidoQuecambia %}
     {% if formulario.errors %}
         <p style="color: red;">{{ formulario.errors }}</p>
     {% endif %}
     <form action="" method="POST">
         {% csrf_token %}
         <table>
-            {{ formulario.as_table  }}
+        {{ formulario.as_table  }}
         </table>
 
         <input type="submit" value="Enviar">
 
     </form>
+    {% endblock %}  
 </body>
 </html>

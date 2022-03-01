@@ -6,5 +6,7 @@
 * Al cargar cada form, te direcciona a la pagina donde se cargaria a la base de datos.
 * Dentro de Inicio esta el form Buscar, el cual lo unico que busca de la base de datos es a Persona.
 * user edit en caso de querer modificar tu cuenta.
+* Ahora haciendo click en tu usario podes entrar a tu perfil y realizar la modificacion del avatar y modificar tu cuenta
+* Se puede ver los POST sin necesidad de crear
 
 
